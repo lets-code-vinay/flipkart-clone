@@ -1,0 +1,33 @@
+{
+  "name": "flipkart-clone",
+  "version": "1.0.0",
+  "description": "E-commerce project",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lets-code-vinay/flipkart-clone.git"
+  },
+  "keywords": [
+    "e-commerce",
+    "react",
+    "redux",
+    "project",
+    "flipkart"
+  ],
+  "author": "Vinay Maurya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lets-code-vinay/flipkart-clone/issues"
+  },
+  "homepage": "https://github.com/lets-code-vinay/flipkart-clone#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  }
+}
