@@ -1,0 +1,50 @@
+.login-container {
+  width: 100%;
+  height: auto;
+  margin: 1% auto;
+  background-color: #f0f2f6;
+  padding: 2%;
+}
+
+.login-section {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  margin: 2% auto;
+}
+
+.image-section {
+  width: 40%;
+  height: 100%;
+  background-color: #2975f0;
+  color: white;
+  padding: 3%;
+}
+
+.image-section div img {
+  margin: 1% auto;
+}
+
+.text-section {
+  height: 300px;
+}
+.form-section {
+  background-color: #fffefe;
+  width: 60%;
+  padding: 3%;
+}
+
+.form-section .input-container {
+  height: 95%;
+}
+
+.form-section .input-container .t-and-c {
+  margin: 5% 0 0 0;
+}
+
+.form-section .input-container .login-btn {
+  width: 100%;
+  margin: 5% 0;
+  background-color: #fa651b;
+  color: white;
+}
