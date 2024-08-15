@@ -106,12 +106,12 @@ const Login = () => {
   };
 
   return (
-    <Box className="login-container">
+    <Box className="login-container" sx={{ bgcolor: "background.main" }}>
       {isLoading && <BasicLoader />}
       <Box className="login-section">
-        <Box className="image-section">
+        <Box className="image-section" sx={{ bgcolor: "primary.main" }}>
           <Box className="text-section">
-            <Typography variant="h4" style={{ height: "70px" }}>
+            <Typography variant="h1" style={{ height: "70px" }}>
               Login
             </Typography>
             <Typography variant="body">
@@ -133,6 +133,7 @@ const Login = () => {
               onChange={handleChange("email")}
               error={isSubmitted && Boolean(errorEmail)}
               helperText={isSubmitted && Boolean(errorEmail) && errorEmail}
+              color="primary"
             />
 
             <TextField
@@ -158,7 +159,7 @@ const Login = () => {
 
             <Typography variant="body1" className="t-and-c">
               By continuing, you agree to Flipkart's &nbsp;
-              <Link href="#" underline="none">
+              <Link href="#" color="primary" underline="none">
                 Terms of Use
               </Link>
               &nbsp; and &nbsp;
@@ -173,6 +174,7 @@ const Login = () => {
                 className="login-btn"
                 disabled={!loginData.email || !loginData.password}
                 onClick={handleSubmit}
+                color="btnColor"
               >
                 Login
               </Button>
