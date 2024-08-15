@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "E-commerce project",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lets-code-vinay/flipkart-clone.git"

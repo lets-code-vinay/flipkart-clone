@@ -106,15 +106,15 @@ const Login = () => {
   };
 
   return (
-    <Box className="login-container">
+    <Box className="login-container" sx={{ bgcolor: "bg.main" }}>
       {isLoading && <BasicLoader />}
       <Box className="login-section">
-        <Box className="image-section">
+        <Box className="image-section" sx={{ bgcolor: "primary.main" }}>
           <Box className="text-section">
-            <Typography variant="h4" style={{ height: "70px" }}>
+            <Typography variant="h1" style={{ height: "70px" }}>
               Login
             </Typography>
-            <Typography variant="body">
+            <Typography variant="body2">
               Get access to your Orders, Wishlist and Recommendations
             </Typography>
           </Box>
@@ -171,8 +171,9 @@ const Login = () => {
               <Button
                 variant="contained"
                 className="login-btn"
-                disabled={!loginData.email || !loginData.password}
-                onClick={handleSubmit}
+                // disabled={!loginData.email || !loginData.password}
+                // onClick={handleSubmit}
+                color="button"
               >
                 Login
               </Button>
@@ -183,6 +184,7 @@ const Login = () => {
             underline="none"
             className="center"
             style={{ fontWeight: 600 }}
+            variant="h6"
           >
             New to Flipkart? Create an account
           </Link>
