@@ -1,19 +1,24 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./src/pages/Login";
+const Login = lazy(() => import("./src/pages/Login"));
 import Homepage from "./src/pages/Homepage";
 import ProductPage from "./src/pages/ProductPage";
+import { LoginShimmer } from "./src/components/Shimmers";
 
 const App = () => {
-  const internalStyle = {
-    backgroundColor: "blue",
-    color: "yellow",
-  };
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={
+              <Suspense fallback={<LoginShimmer />}>
+                <Login />
+              </Suspense>
+            }
+          />
+
           <Route exact path="/" element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/products" element={<ProductPage />} />
