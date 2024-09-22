@@ -20,6 +20,12 @@ const theme = createTheme({
       light: "#dc8256",
       dark: "#fc5504",
     },
+    white: {
+      main: "#fff",
+    },
+    footer: {
+      main: "#172337",
+    },
   },
   typography: {
     fontFamily: [
@@ -74,7 +80,10 @@ const theme = createTheme({
       fontSize: "1.2rem", // 12px
       fontWeight: 400,
     },
-    subtitle: {},
+    subtitle: {
+      fontSize: "1rem", // 1px
+      fontWeight: 400,
+    },
   },
   components: {
     MuiButton: {

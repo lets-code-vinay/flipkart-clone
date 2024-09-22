@@ -19,9 +19,26 @@ const App = () => {
             }
           />
 
-          <Route exact path="/" element={<Homepage />} />
-          <Route path="/homepage" element={<Homepage />} />
-          <Route path="/products" element={<ProductPage />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Suspense fallback={<LoginShimmer />}>
+                <Homepage />
+              </Suspense>
+            }
+          />
+          <Route
+            exact
+            path="/homepage"
+            element={
+              <Suspense fallback={<LoginShimmer />}>
+                <Homepage />
+              </Suspense>
+            }
+          />
+          {/* <Route path="/homepage" element={<Homepage />} />
+          <Route path="/products" element={<ProductPage />} /> */}
         </Routes>
       </BrowserRouter>
     </>

@@ -19,6 +19,8 @@ import "./style.css";
 import { setUserData } from "../../redux/reducers/appReducer";
 import { useNavigate } from "react-router-dom";
 import BasicLoader from "../../components/Loader";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -106,91 +108,95 @@ const Login = () => {
   };
 
   return (
-    <Box className="login-container" sx={{ bgcolor: "bg.main" }}>
-      {isLoading && <BasicLoader />}
-      <Box className="login-section">
-        <Box className="image-section" sx={{ bgcolor: "primary.main" }}>
-          <Box className="text-section">
-            <Typography variant="h1" style={{ height: "70px" }}>
-              Login
-            </Typography>
-            <Typography variant="body2">
-              Get access to your Orders, Wishlist and Recommendations
-            </Typography>
-          </Box>
-          <Box className="center">
-            <img src={LOGIN_PAGE_IMAGES.login} alt="login image" />
-          </Box>
-        </Box>
-        <Box className="form-section">
-          <Box className="input-container">
-            <TextField
-              id="standard-basic"
-              label="Enter Email address"
-              variant="standard"
-              fullWidth
-              margin="normal"
-              onChange={handleChange("email")}
-              error={isSubmitted && Boolean(errorEmail)}
-              helperText={isSubmitted && Boolean(errorEmail) && errorEmail}
-            />
-
-            <TextField
-              id="standard-basic"
-              label="Enter password"
-              variant="standard"
-              fullWidth
-              margin="normal"
-              type={isShow ? "text" : "password"}
-              onChange={handleChange("password")}
-              error={isSubmitted && Boolean(errorPW)}
-              helperText={isSubmitted && Boolean(errorPW) && errorPW}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="start">
-                    <IconButton onClick={handlePasswordView}>
-                      {!isShow ? <VisibilityIcon /> : <VisibilityOffIcon />}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-
-            <Typography variant="body1" className="t-and-c">
-              By continuing, you agree to Flipkart's &nbsp;
-              <Link href="#" underline="none">
-                Terms of Use
-              </Link>
-              &nbsp; and &nbsp;
-              <Link href="#" underline="none">
-                Privacy Policy
-              </Link>
-              .
-            </Typography>
-            <Box>
-              <Button
-                variant="contained"
-                className="login-btn"
-                // disabled={!loginData.email || !loginData.password}
-                // onClick={handleSubmit}
-                color="button"
-              >
+    <>
+      <Header />
+      <Box className="login-container" sx={{ bgcolor: "bg.main" }}>
+        {isLoading && <BasicLoader />}
+        <Box className="login-section">
+          <Box className="image-section" sx={{ bgcolor: "primary.main" }}>
+            <Box className="text-section">
+              <Typography variant="h1" style={{ height: "70px" }}>
                 Login
-              </Button>
+              </Typography>
+              <Typography variant="body2">
+                Get access to your Orders, Wishlist and Recommendations
+              </Typography>
+            </Box>
+            <Box className="center">
+              <img src={LOGIN_PAGE_IMAGES.login} alt="login image" />
             </Box>
           </Box>
-          <Link
-            href="#"
-            underline="none"
-            className="center"
-            style={{ fontWeight: 600 }}
-            variant="h6"
-          >
-            New to Flipkart? Create an account
-          </Link>
+          <Box className="form-section">
+            <Box className="input-container">
+              <TextField
+                id="standard-basic"
+                label="Enter Email address"
+                variant="standard"
+                fullWidth
+                margin="normal"
+                onChange={handleChange("email")}
+                error={isSubmitted && Boolean(errorEmail)}
+                helperText={isSubmitted && Boolean(errorEmail) && errorEmail}
+              />
+
+              <TextField
+                id="standard-basic"
+                label="Enter password"
+                variant="standard"
+                fullWidth
+                margin="normal"
+                type={isShow ? "text" : "password"}
+                onChange={handleChange("password")}
+                error={isSubmitted && Boolean(errorPW)}
+                helperText={isSubmitted && Boolean(errorPW) && errorPW}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="start">
+                      <IconButton onClick={handlePasswordView}>
+                        {!isShow ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+
+              <Typography variant="body1" className="t-and-c">
+                By continuing, you agree to Flipkart's &nbsp;
+                <Link href="#" underline="none">
+                  Terms of Use
+                </Link>
+                &nbsp; and &nbsp;
+                <Link href="#" underline="none">
+                  Privacy Policy
+                </Link>
+                .
+              </Typography>
+              <Box>
+                <Button
+                  variant="contained"
+                  className="login-btn"
+                  disabled={!loginData.email || !loginData.password}
+                  onClick={handleSubmit}
+                  color="button"
+                >
+                  Login
+                </Button>
+              </Box>
+            </Box>
+            <Link
+              href="#"
+              underline="none"
+              className="center"
+              style={{ fontWeight: 600 }}
+              variant="h6"
+            >
+              New to Flipkart? Create an account
+            </Link>
+          </Box>
         </Box>
       </Box>
-    </Box>
+      <Footer />
+    </>
   );
 };
 
